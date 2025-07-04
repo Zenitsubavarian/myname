@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday Kash 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      background: linear-gradient(to right, #ffe4e1, #ffb6c1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #d63384;
+      text-shadow: 1px 1px 5px white;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      color: white;
+      background-color: #ff4d6d;
+      box-shadow: 0 0 15px #ff4d6d;
+      transition: 0.3s;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: #e60044;
+      box-shadow: 0 0 25px #e60044;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Welcome ! Ready for the surprise? 🎉</h1>
+  <button class="btn" onclick="startMusic()">🎧 Here is a lovely music for you click me</button>
+  <button class="btn" onclick="goToNext()"> Go to Page 2</button>
+
+  <script>
+    function startMusic() {
+      // opens the music.html in a small popup window
+      const popup = window.open('music.html', 'musicWindow', 'width=300,height=100');
+      if (popup) {
+        popup.focus();
+      } else {
+        alert('Please allow popups to play the song.');
+      }
+    }
+
+    function goToNext() {
+      window.location.href = 'page2.html';
+    }
+  </script>
+</body>
+</html>

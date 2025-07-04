@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body.page2 {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #fff0f5, #ffe4e1);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      position: relative;
+    }
+
+    .center-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      animation: fadeIn 3s ease-in-out forwards;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 40px 60px;
+      border-radius: 30px;
+      box-shadow: 0 0 40px rgba(255, 105, 180, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .center-message h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #d63384;
+      text-shadow: 2px 2px 10px #fff;
+      margin: 0;
+    }
+
+    .next-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      font-size: 1.3rem;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: linear-gradient(145deg, #ff69b4, #ff1493);
+      border: none;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .next-btn::after {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      top: -100%;
+      left: -10%;
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+
+    .next-btn:hover::after {
+      top: 100%;
+    }
+
+    .next-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(145deg, #ff1493, #ff69b4);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    canvas#confetti-canvas, canvas#petals-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="page2">
+  <canvas id="confetti-canvas"></canvas>
+  <canvas id="petals-canvas"></canvas>
+
+  <div class="center-message">
+    <h1>🎉 Happy Birthday Kash! 🎉</h1>
+    <a href="page3.html" class="next-btn">Next ➡️</a>
+  </div>
+
+  <script>
+    // Confetti burst (once)
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const cCtx = confettiCanvas.getContext('2d');
+    confettiCanvas.width = window.innerWidth;
+    confettiCanvas.height = window.innerHeight;
+    const confetti = [];
+    const colors = ['#ff4d6d', '#ffc107', '#4bc0c0', '#9966ff', '#36a2eb'];
+
+    for (let i = 0; i < 150; i++) {
+      confetti.push({
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+        r: Math.random() * 6 + 4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vx: (Math.random() - 0.5) * 10,
+        vy: (Math.random() - 0.5) * 10,
+        life: 100
+      });
+    }
+
+    function drawConfetti() {
+      cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confetti.forEach((c, i) => {
+        cCtx.beginPath();
+        cCtx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        cCtx.fillStyle = c.color;
+        cCtx.fill();
+        c.x += c.vx;
+        c.y += c.vy;
+        c.vy += 0.1;
+        c.life--;
+        if (c.life <= 0) confetti[i] = null;
+      });
+    }
+    setInterval(drawConfetti, 30);
+
+    // Sakura petal animation
+    const petalsCanvas = document.getElementById('petals-canvas');
+    const pCtx = petalsCanvas.getContext('2d');
+    petalsCanvas.width = window.innerWidth;
+    petalsCanvas.height = window.innerHeight;
+
+    const petals = [];
+    for (let i = 0; i < 50; i++) {
+      petals.push({
+        x: Math.random() * petalsCanvas.width,
+        y: Math.random() * petalsCanvas.height,
+        r: Math.random() * 5 + 5,
+        color: 'rgba(255,192,203,0.6)',
+        vx: Math.random() * 1 - 0.5,
+        vy: Math.random() * 1 + 0.3
+      });
+    }
+
+    function drawPetals() {
+      pCtx.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
+      petals.forEach(p => {
+        pCtx.beginPath();
+        pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        pCtx.fillStyle = p.color;
+        pCtx.fill();
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.y > petalsCanvas.height) {
+          p.y = -10;
+          p.x = Math.random() * petalsCanvas.width;
+        }
+      });
+    }
+    setInterval(drawPetals, 40);
+
+    window.addEventListener('resize', () => {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+      petalsCanvas.width = window.innerWidth;
+      petalsCanvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music</title>
+</head>
+<body style="background: #fff0f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+  <audio id="song" autoplay></audio>
+
+  <script>
+    const audio = document.getElementById('song');
+    audio.src = "aboutyou.mp3"; // adjust path if needed
+    audio.currentTime = 23.2; // start from 23s
+
+    audio.addEventListener('loadedmetadata', () => {
+      audio.currentTime = 22.8;
+      audio.play();
+    });
+
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 23;
+      audio.play();
+    });
+  </script>
+</body>
+</html>

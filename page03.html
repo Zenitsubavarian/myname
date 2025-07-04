@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Message for Kash 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(255, 230, 240, 0.8), rgba(255, 204, 221, 0.8)),
+                  url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .flower {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: url('flower.png') no-repeat center center / contain;
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    .flower:nth-child(1) { left: 5%; animation-delay: 0s; }
+    .flower:nth-child(2) { left: 15%; animation-delay: 2s; }
+    .flower:nth-child(3) { left: 30%; animation-delay: 4s; }
+    .flower:nth-child(4) { left: 50%; animation-delay: 1s; }
+    .flower:nth-child(5) { left: 65%; animation-delay: 3s; }
+    .flower:nth-child(6) { left: 80%; animation-delay: 5s; }
+    .flower:nth-child(7) { left: 90%; animation-delay: 7s; }
+
+    @keyframes fall {
+      0% { top: -50px; transform: translateX(0) rotate(0deg); }
+      50% { transform: translateX(20px) rotate(180deg); }
+      100% { top: 100vh; transform: translateX(-20px) rotate(360deg); }
+    }
+
+    .quote-box {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      max-width: 800px;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    .quote-box h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .quote-box p {
+      font-size: 1.3rem;
+      color: #5c5c5c;
+      line-height: 1.8;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 25px;
+      background: linear-gradient(to right, #ff69b4, #ff1493);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .next-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Flowers -->
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+  <div class="flower"></div>
+
+  <div class="quote-box">
+    <h2>To you Kaju 💖</h2>
+    <p>
+      First of all Happy Birthday Kash<br>
+      Do you Remember me ? But I do And <br>
+      Do you Think i Have Forgotten About you--No <br>
+      But there is something about you that now i can't remember<br>
+      It's the same damn thing that made my heart surrender<br>
+      And i miss you on a train i miss you in the morning<br>
+      I never know what to think about<br>
+      
+    </p>
+    <a href="page04.html" class="next-btn">Next ➡️</a>
+  </div>
+</body>
+</html>

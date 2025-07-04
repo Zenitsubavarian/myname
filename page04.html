@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kash's Photo Collage 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffeef3;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .collage {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .collage img,
+    .collage video {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 6px solid white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      transform-origin: center center;
+      transition: transform 0.3s ease, z-index 0.2s;
+      cursor: pointer;
+    }
+
+    .collage img:hover,
+    .collage video:hover {
+      transform: translate(-50%, -50%) scale(1.15) rotate(3deg);
+      z-index: 10;
+    }
+
+    /* Image positions */
+    .img1 { top: 35%; left: 40%; transform: translate(-50%, -50%) rotate(-5deg); }
+    .img2 { top: 20%; left: 60%; transform: translate(-50%, -50%) rotate(8deg); }
+    .img3 { top: 60%; left: 70%; transform: translate(-50%, -50%) rotate(-3deg); }
+    .img4 { top: 70%; left: 30%; transform: translate(-50%, -50%) rotate(6deg); }
+    .img5 { top: 30%; left: 75%; transform: translate(-50%, -50%) rotate(-6deg); }
+    .img6 { top: 65%; left: 80%; transform: translate(-50%, -50%) rotate(4deg); }
+    .img7 { top: 75%; left: 55%; transform: translate(-50%, -50%) rotate(-9deg); }
+    .img8 { top: 45%; left: 25%; transform: translate(-50%, -50%) rotate(3deg); }
+    .img9 { top: 25%; left: 50%; transform: translate(-50%, -50%) rotate(5deg); }
+    .img10 { top: 45%; left: 78%; transform: translate(-50%, -50%) rotate(4deg); }
+
+    .next-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 24px;
+      background: #ff4081;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 20;
+    }
+  </style>
+</head>
+<body>
+  <div class="collage">
+    <img src="1.jpg" class="img1">
+    <img src="2.jpg" class="img2">
+    <img src="3.jpg" class="img3">
+    <img src="4.jpg" class="img4">
+    <img src="5.jpg" class="img5">
+    <img src="6.jpg" class="img6">
+    <img src="7.jpg" class="img7">
+    <img src="8.jpg" class="img8">
+    <img src="9.jpg" class="img9">
+    <video class="img10" src="video.mp4" muted loop playsinline></video>
+
+    <a href="page05.html" class="next-btn">Final Page 💥</a>
+  </div>
+
+  <script>
+    const video = document.querySelector('.img10');
+    video.addEventListener('mouseenter', () => video.play());
+    video.addEventListener('mouseleave', () => video.pause());
+  </script>
+</body>
+</html>

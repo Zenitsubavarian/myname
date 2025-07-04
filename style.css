@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #ffe4e1, #ffb6c1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.content {
+  z-index: 1;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #d63384;
+  text-shadow: 1px 1px 5px white;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  background-color: #ff4d6d;
+  box-shadow: 0 0 15px #ff4d6d;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: #e60044;
+  box-shadow: 0 0 25px #e60044;
+}
+body.page2 {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.center-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.center-message h1 {
+  font-size: 3rem;
+  color: #ff4081;
+  text-shadow: 2px 2px 8px #fff;
+}
+
+.next-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #ff4081;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #ff4081;
+}
+
+canvas#popper-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.quote-box {
+  
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.sound-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: linear-gradient(145deg, #ff69b4, #ff1493);
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.sound-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #ff1493, #ff69b4);
+}
+.collage video {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border: 6px solid white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform-origin: center center;
+  transition: transform 0.3s ease, z-index 0.2s;
+  cursor: pointer;
+}
+
+.collage video:hover {
+  transform: translate(-50%, -50%) scale(1.15) rotate(3deg);
+  z-index: 10;
+}
+
+/* Place video to correct position instead of img10 */
+.img10 {
+  top: 45%;
+  left: 78%;
+  transform: translate(-50%, -50%) rotate(4deg);
+}
+
